@@ -2,7 +2,7 @@ import { View, Text} from 'react-native'
 import React from 'react'
 import ChatHeader from './ChatHeader'
 
-const Chat = () => {
+export default function Chat() {
   return (
     <>
     <ChatHeader />
@@ -10,4 +10,3 @@ const Chat = () => {
   )
 }
 
-export default Chat

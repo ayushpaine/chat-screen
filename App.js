@@ -1,5 +1,5 @@
 import Chat from "./components/Chat";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import * as Font from "expo-font";
 import { useState } from "react";
 import AppLoading from "expo-app-loading";
@@ -14,7 +14,7 @@ const getFonts = () => {
   });
 };
 
-const App = () => {
+export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   if (fontsLoaded) {
@@ -32,9 +32,7 @@ const App = () => {
       />
     );
   }
-};
-
-export default App;
+}
 
 const styles = StyleSheet.create({
   container: {
