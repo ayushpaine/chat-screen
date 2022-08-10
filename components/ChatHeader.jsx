@@ -2,6 +2,7 @@ import { View, Text, StatusBar, Platform, StyleSheet, SafeAreaView, Dimensions }
 import React from 'react'
 import Feather from "react-native-vector-icons/Feather";
 import { Image } from 'react-native';
+import chatInfo from '../data/chatInfo.json'
 
 const ChatHeader = () => {
   return (
@@ -12,11 +13,11 @@ const ChatHeader = () => {
             <Feather name='arrow-left' style={styles.arrowIcon} />
           </View>
           <View>
-            <Image source={{uri: 'https://reactjs.org/logo-og.png'}} style={styles.groupDp}/>
+            <Image source={{uri:chatInfo.groupDp}} style={styles.groupDp}/>
           </View>
           <View>
             <Text style={styles.headerText}>
-              Group 1
+              {chatInfo.chatName}
             </Text>
           </View>
         </View>
