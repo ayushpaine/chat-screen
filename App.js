@@ -11,10 +11,11 @@ const getFonts = () => {
     "poppins-medium": require("./assets/fonts/Poppins-Medium.ttf"),
     "poppins-bold": require("./assets/fonts/Poppins-Bold.ttf"),
     "poppins-semibold": require("./assets/fonts/Poppins-SemiBold.ttf"),
+    "poppins-italic":require("./assets/fonts/Poppins-Italic.ttf")
   });
 };
 
-export default function App() {
+const App = () => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   if (fontsLoaded) {
@@ -33,6 +34,8 @@ export default function App() {
     );
   }
 }
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {

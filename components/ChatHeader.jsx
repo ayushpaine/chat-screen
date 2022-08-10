@@ -3,7 +3,7 @@ import React from 'react'
 import Feather from "react-native-vector-icons/Feather";
 import { Image } from 'react-native';
 
-export default function ChatHeader() {
+const ChatHeader = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
@@ -27,6 +27,8 @@ export default function ChatHeader() {
     </SafeAreaView>
   )
 }
+
+export default ChatHeader;
 
 
 const styles = StyleSheet.create({
