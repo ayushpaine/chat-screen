@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingTop: 12,
     paddingBottom: 32,
+    zIndex:100,
     paddingHorizontal: 16,
   },
   textArea: {
