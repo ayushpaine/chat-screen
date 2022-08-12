@@ -7,7 +7,7 @@ import { StyleSheet, View } from "react-native";
 export default function Chat() {
   return (
     <>
-      <View>
+      <View style={styles.container}>
         <ChatHeader />
         <ChatWindow />
       </View>
@@ -20,7 +20,5 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });

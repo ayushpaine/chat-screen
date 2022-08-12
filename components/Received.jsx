@@ -2,24 +2,25 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Image } from "react-native";
 
-export default function Received() {
+export default function Received({ data }) {
   return (
     <View style={styles.container}>
-      <View style={styles.message}>
-        <Image
-          source={{ uri: "https://reactjs.org/logo-og.png" }}
-          style={styles.userDp}
-        />
-        <View style={styles.body}>
-          <View style={styles.textContainer}>
-            <Text style={styles.username}>RP - JDS</Text>
-            <Text style={styles.messageBody}>
-              Hello
-              Everyoneooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-            </Text>
-          </View>
-          <View style={styles.time}>
-            <Text style={styles.timeText}>9:35 PM</Text>
+      <View style={styles.wrapper}>
+        <View style={styles.message}>
+          <Image
+            source={{
+              uri: data.userDp,
+            }}
+            style={styles.userDp}
+          />
+          <View style={styles.body}>
+            <View style={styles.textContainer}>
+              <Text style={styles.username}>{data.username}</Text>
+              <Text style={styles.messageBody}>{data.body}</Text>
+            </View>
+            <View style={styles.time}>
+              <Text style={styles.timeText}>{data.time}</Text>
+            </View>
           </View>
         </View>
       </View>
@@ -33,6 +34,9 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "flex-start",
     marginVertical: 8,
+  },
+  wrapper: {
+    paddingRight: "25%",
   },
   userDp: {
     height: 40,
@@ -51,7 +55,6 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 10,
     borderTopRightRadius: 10,
     padding: 12,
-    flexShrink: 1,
   },
   username: {
     fontFamily: "poppins-bold",

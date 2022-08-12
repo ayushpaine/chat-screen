@@ -52,6 +52,8 @@ const styles = StyleSheet.create({
       Platform.OS === "android"
         ? 1.5 * StatusBar.currentHeight
         : 0.5 * StatusBar.currentHeight,
+    display: "flex",
+    alignItems: "center",
   },
   headerText: {
     color: "white",

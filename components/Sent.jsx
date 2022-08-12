@@ -2,25 +2,27 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Image } from "react-native";
 
-export default function Sent() {
+export default function Sent({ data }) {
   return (
     <View style={styles.container}>
-      <View style={styles.message}>
-        <View style={styles.body}>
-          <View style={styles.textContainer}>
-            <Text style={styles.username}>FM - Sweta</Text>
-            <Text style={styles.messageBody}>
-              Helloooooooooooooooooooooooooooooooooooooooooooo
-            </Text>
+      <View style={styles.wrapper}>
+        <View style={styles.message}>
+          <View style={styles.body}>
+            <View style={styles.textContainer}>
+              <Text style={styles.username}>{data.username}</Text>
+              <Text style={styles.messageBody}>{data.body}</Text>
+            </View>
+            <View style={styles.time}>
+              <Text style={styles.timeText}>{data.time}</Text>
+            </View>
           </View>
-          <View style={styles.time}>
-            <Text style={styles.timeText}>9:35 PM</Text>
-          </View>
+          <Image
+            source={{
+              uri: data.userDp,
+            }}
+            style={styles.userDp}
+          />
         </View>
-        <Image
-          source={{ uri: "https://reactjs.org/logo-og.png" }}
-          style={styles.userDp}
-        />
       </View>
     </View>
   );
@@ -32,6 +34,9 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "flex-end",
     marginVertical: 8,
+  },
+  wrapper: {
+    paddingLeft: "20%",
   },
   userDp: {
     height: 40,
@@ -50,7 +55,6 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 10,
     borderTopLeftRadius: 10,
     padding: 12,
-    flexShrink: 1,
   },
   username: {
     fontFamily: "poppins-bold",
